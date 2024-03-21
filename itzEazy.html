@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ItzEazy</title>
+    <link rel="stylesheet" href="itzEazy.css">
+</head>
+
+<body>
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+    
+    <div class="mainArea">
+        
+        <div class="inputBox inputBox1 show">
+            <div class="form">
+                <div class="headTag">
+                    <h2 class="mainHead">Let's get started!</h2>
+                    <p class="subHed">Add your details (As per your registered records)</p>
+                </div>
+                <div class="formData">
+                    <div class="inputContainer">
+                        <label for="inputField" class="inputLabel">Name</label>
+                        <input id="inputName" class="input_Field" type="text" name="input-name" title="Inpit title"
+                            placeholder="Enter Name" autocomplete="off">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="inputField" class="inputLabel">Nature of Driving Licence</label>
+                        <div class="split">
+                            <label class="option">
+                                <input type="radio" name="drivingLicenceNature" value="Private" >
+                                Private
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="drivingLicenceNature" value="Commercial">
+                                Commercial
+                            </label>
+                        </div>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="inputField" class="inputLabel">Type of Previous Driving Licence</label>
+                        <div class="split">
+                            <label class="option">
+                                <input type="radio" name="previousDrivingLicence" value="Paper driving licence" >
+                                Paper driving licence
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="previousDrivingLicence" value="Smart driving licence">
+                                Smart driving licence
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnDiv">
+                    <button class="theBtn" onclick="showNext()">Next</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="inputBox inputBox2">
+            <div class="form">
+                <div class="headTag">
+                    <h2 class="mainHead">Let's get started!</h2>
+                    <p class="subHed">Add your details (As per your registered records)</p>
+                </div>
+                <div class="formData">
+                    <div class="inputContainer">
+                        <label for="inputField" class="inputLabel">Place Where Driving Licence was issued</label>
+                        <input id="licencePlace" class="input_Field" type="text" name="issuedPlace" title="Inpit title"
+                            placeholder="Enter place name" autocomplete="off">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="issuedYear" class="inputLabel">Issued Year of Licence</label>
+                        <input id="issuedYear" class="input_Field" type="text" name="issuedYear" title="Inpit title"
+                            placeholder="Choose Issued Year of Licence" onclick="openYearModal()">
+                    </div>
+                    <div id="yearModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeYearModal()">&times;</span>
+                            <div class="modalItems">
+                                <div class="modalEle">
+                                    <ul id="yearOptions" class="yearOpt">
+                                        <li class="liEle" onclick="selectYear(2023)">2023</li>
+                                        <li class="liEle" onclick="selectYear(2022)">2022</li>
+                                        <li class="liEle" onclick="selectYear(2021)">2021</li>
+                                        <li class="liEle" onclick="selectYear(2020)">2020</li>
+                                        <li class="liEle" onclick="selectYear(2019)">2019</li>
+                                        <li class="liEle" onclick="selectYear(2018)">2018</li>
+                                        <li class="liEle" onclick="selectYear(2017)">2017</li>
+                                        <li class="liEle" onclick="selectYear(2016)">2016</li>
+                                        <li class="liEle" onclick="selectYear(2015)">2015</li>
+                                        <li class="liEle" onclick="selectYear(2014)">2014</li>
+                                        <li class="liEle" onclick="selectYear(2013)">2013</li>
+                                        <li class="liEle" onclick="selectYear(2012)">2012</li>
+                                        <li class="liEle" onclick="selectYear(2011)">2011</li>
+                                        <li class="liEle" onclick="selectYear(2010)">2010</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="inputField" class="inputLabel">Expired Year of Licence</label>
+                        <input id="expiredYear" class="input_Field" type="text" name="previousLicenceType"
+                            title="Inpit title" placeholder="Choose Expired Year of Licence"
+                            onclick="openExpiredYearModal()">
+                    </div>
+                    <div id="expiredYearModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeExpiredYearModal()">&times;</span>
+                            <div class="modalItems">
+                                <div class="modalEle">
+                                    <ul id="yearOptions2" class="yearOpt">
+                                        <li class="liEle2" onclick="selectExpiredYear(2023)">2023</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2022)">2022</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2021)">2021</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2020)">2020</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2019)">2019</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2018)">2018</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2017)">2017</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2016)">2016</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2015)">2015</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2014)">2014</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2013)">2013</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2012)">2012</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2011)">2011</li>
+                                        <li class="liEle2" onclick="selectExpiredYear(2010)">2010</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnDiv">
+                    <button class="theBtn" onclick="showFinish()">Finish</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="inputBox inputBox3">
+            <div class="form">
+                <div class="separator">
+                    <hr class="line">
+                    <p class="successTag">Data has been successfully recorded</p>
+                    <hr class="line">
+                </div>
+                <div class="btnDiv">
+                    <button class="theBtn" onclick="window.location.reload();">Done</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
